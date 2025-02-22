@@ -158,102 +158,102 @@ for (int i = 0; i < 3; i++) {
 }`,
         explanation: 'Pętle w C++ umożliwiają wielokrotne wykonywanie bloku kodu, co jest niezwykle przydatne w przypadku operacji, które muszą być powtarzane, takich jak przetwarzanie elementów tablicy. Istnieją różne typy pętli, w tym for, while i do-while. Pętla for jest często używana, gdy znamy liczbę iteracji, podczas gdy while jest bardziej elastyczna i działa, dopóki warunek jest spełniony. Pętle mogą być zagnieżdżane, co pozwala na tworzenie bardziej złożonych struktur, takich jak przetwarzanie macierzy. Zrozumienie pętli jest kluczowe dla efektywnego programowania, ponieważ pozwala na automatyzację powtarzalnych zadań.'
       },
-      random: {
-        title: 'Liczby Pseudolosowe',
-        content: `#include <cstdlib>
-#include <ctime>
-
-// Inicjalizacja generatora
-srand(time(0));
-
-// Generowanie liczb losowych
-int losowa = rand() % 100;     // 0-99
-int zakres = rand() % 50 + 1;  // 1-50
-
-// Przykład: losowa liczba z zakresu
-int min = 10, max = 20;
-int w_zakresie = rand() % (max - min + 1) + min;`,
-        explanation: 'Generowanie liczb pseudolosowych w C++ jest realizowane za pomocą funkcji rand(), która zwraca losową liczbę całkowitą. Aby uzyskać różne wyniki przy każdym uruchomieniu programu, należy zainicjować generator liczb losowych za pomocą srand(time(0)), co ustawia ziarno na podstawie aktualnego czasu. Dzięki temu, każda sesja generowania liczb losowych będzie miała inny zestaw wyników. Pseudolosowość jest przydatna w wielu zastosowaniach, takich jak gry, symulacje czy algorytmy, które wymagają losowych danych. Ważne jest jednak, aby pamiętać, że rand() generuje liczby pseudolosowe, co oznacza, że nie są one całkowicie losowe, a ich sekwencja jest deterministyczna.'
-      },
-      tablice_1d: {
-        title: 'Tablice Jednowymiarowe',
-        content: `// Deklaracja i inicjalizacja
-int tablica[5] = {1, 2, 3, 4, 5};
-
-// Dostęp do elementów
-tablica[0] = 10;  // Pierwszy element
-tablica[4] = 50;  // Ostatni element
-
-// Przetwarzanie tablicy
-for (int i = 0; i < 5; i++) {
-    cout << tablica[i] << " ";
-}`,
-        explanation: 'Tablice jednowymiarowe w C++ to struktury danych, które przechowują elementy tego samego typu w jednym wymiarze. Umożliwiają one łatwe przechowywanie i dostęp do zbioru danych, co jest szczególnie przydatne w przypadku, gdy liczba elementów jest znana z góry. Elementy tablicy są indeksowane, co oznacza, że każdy element ma przypisany numer (indeks), zaczynający się od zera. Dzięki temu można łatwo uzyskać dostęp do konkretnego elementu, modyfikować go lub przetwarzać całą tablicę w pętli. Tablice jednowymiarowe są podstawowym budulcem bardziej złożonych struktur danych, takich jak tablice wielowymiarowe.'
-      },
-      tablice_2d: {
-        title: 'Tablice Dwuwymiarowe',
-        content: `// Deklaracja i inicjalizacja
-int tablica[3][3] = {
-    {1, 2, 3},
-    {4, 5, 6},
-    {7, 8, 9}
-};
-
-// Dostęp do elementów
-tablica[0][0] = 10;  // Pierwszy element
-tablica[2][2] = 90;  // Ostatni element
-
-// Przetwarzanie tablicy
-for (int i = 0; i < 3; i++) {
-    for (int j = 0; j < 3; j++) {
-        cout << tablica[i][j] << " ";
-    }
-    cout << endl;
-}`,
-        explanation: 'Tablice dwuwymiarowe w C++ to struktury danych, które przechowują elementy w układzie wierszy i kolumn. Można je traktować jako macierze, co czyni je idealnymi do reprezentacji danych w formie tabelarycznej, takich jak obrazy, tabele czy siatki. Elementy tablicy dwuwymiarowej są również indeksowane, ale wymagają dwóch indeksów: jednego dla wiersza i drugiego dla kolumny. Dzięki temu można łatwo uzyskać dostęp do konkretnego elementu oraz przetwarzać dane w złożony sposób, na przykład w pętlach zagnieżdżonych. Tablice dwuwymiarowe są często wykorzystywane w algorytmach, które wymagają przetwarzania danych w formie macierzy.'
-      },
-      string_ops: {
-        title: 'Tekstowy Typ Danych i Operacje na Zmiennych Tekstowych',
-        content: `#include <string>
-
-string tekst = "Hello";
-string tekst2 = " World";
-
-// Podstawowe operacje
-string polaczony = tekst + tekst2;  // Łączenie
-int dlugosc = tekst.length();       // Długość
-char znak = tekst[0];               // Dostęp do znaku
-
-// Metody string
-tekst.substr(0, 3);                 // Podciąg
-tekst.find("ll");                   // Szukanie
-tekst.replace(0, 1, "h");          // Zamiana`,
-        explanation: 'Typ danych string w C++ jest używany do przechowywania tekstu i oferuje wiele metod do manipulacji danymi tekstowymi. Operacje na zmiennych tekstowych obejmują łączenie (+), obliczanie długości (length()), dostęp do poszczególnych znaków oraz różne metody do przetwarzania tekstu, takie jak substr() (podciąg), find() (szukanie) i replace() (zamiana). Dzięki tym funkcjom programiści mogą łatwo manipulować danymi tekstowymi, co jest niezbędne w wielu aplikacjach, takich jak przetwarzanie danych wejściowych od użytkownika, analiza tekstu czy generowanie dynamicznych komunikatów.'
-      },
-      funkcje: {
-        title: 'Funkcje',
-        content: `// Deklaracja funkcji
-int dodaj(int a, int b) {
-    return a + b;
-}
-
-// Funkcja void (bez zwracanej wartości)
-void wyswietl(string tekst) {
-    cout << tekst << endl;
-}
-
-// Funkcja z parametrami domyślnymi
-void powitaj(string imie = "Gość") {
-    cout << "Witaj " << imie << endl;
-}
-
-// Przeciążanie funkcji
-double dodaj(double a, double b) {
-    return a + b;
-}`,
-        explanation: 'Funkcje w C++ to bloki kodu, które można wielokrotnie wykorzystywać, co pozwala na organizację kodu i zwiększenie jego czytelności. Funkcje mogą przyjmować parametry, co umożliwia przekazywanie danych do nich, oraz zwracać wartości, co pozwala na uzyskiwanie wyników obliczeń. C++ wspiera również funkcje void, które nie zwracają wartości, oraz przeciążanie funkcji, co pozwala na definiowanie wielu funkcji o tej samej nazwie, ale z różnymi typami lub liczbami parametrów. Dzięki funkcjom programiści mogą tworzyć modularny kod, co ułatwia jego utrzymanie i rozwój.'
-      }
-    },
+//       random: {
+//         title: 'Liczby Pseudolosowe',
+//         content: `#include <cstdlib>
+// #include <ctime>
+//
+// // Inicjalizacja generatora
+// srand(time(0));
+//
+// // Generowanie liczb losowych
+// int losowa = rand() % 100;     // 0-99
+// int zakres = rand() % 50 + 1;  // 1-50
+//
+// // Przykład: losowa liczba z zakresu
+// int min = 10, max = 20;
+// int w_zakresie = rand() % (max - min + 1) + min;`,
+//         explanation: 'Generowanie liczb pseudolosowych w C++ jest realizowane za pomocą funkcji rand(), która zwraca losową liczbę całkowitą. Aby uzyskać różne wyniki przy każdym uruchomieniu programu, należy zainicjować generator liczb losowych za pomocą srand(time(0)), co ustawia ziarno na podstawie aktualnego czasu. Dzięki temu, każda sesja generowania liczb losowych będzie miała inny zestaw wyników. Pseudolosowość jest przydatna w wielu zastosowaniach, takich jak gry, symulacje czy algorytmy, które wymagają losowych danych. Ważne jest jednak, aby pamiętać, że rand() generuje liczby pseudolosowe, co oznacza, że nie są one całkowicie losowe, a ich sekwencja jest deterministyczna.'
+//       },
+//       tablice_1d: {
+//         title: 'Tablice Jednowymiarowe',
+//         content: `// Deklaracja i inicjalizacja
+// int tablica[5] = {1, 2, 3, 4, 5};
+//
+// // Dostęp do elementów
+// tablica[0] = 10;  // Pierwszy element
+// tablica[4] = 50;  // Ostatni element
+//
+// // Przetwarzanie tablicy
+// for (int i = 0; i < 5; i++) {
+//     cout << tablica[i] << " ";
+// }`,
+//         explanation: 'Tablice jednowymiarowe w C++ to struktury danych, które przechowują elementy tego samego typu w jednym wymiarze. Umożliwiają one łatwe przechowywanie i dostęp do zbioru danych, co jest szczególnie przydatne w przypadku, gdy liczba elementów jest znana z góry. Elementy tablicy są indeksowane, co oznacza, że każdy element ma przypisany numer (indeks), zaczynający się od zera. Dzięki temu można łatwo uzyskać dostęp do konkretnego elementu, modyfikować go lub przetwarzać całą tablicę w pętli. Tablice jednowymiarowe są podstawowym budulcem bardziej złożonych struktur danych, takich jak tablice wielowymiarowe.'
+//       },
+//       tablice_2d: {
+//         title: 'Tablice Dwuwymiarowe',
+//         content: `// Deklaracja i inicjalizacja
+// int tablica[3][3] = {
+//     {1, 2, 3},
+//     {4, 5, 6},
+//     {7, 8, 9}
+// };
+//
+// // Dostęp do elementów
+// tablica[0][0] = 10;  // Pierwszy element
+// tablica[2][2] = 90;  // Ostatni element
+//
+// // Przetwarzanie tablicy
+// for (int i = 0; i < 3; i++) {
+//     for (int j = 0; j < 3; j++) {
+//         cout << tablica[i][j] << " ";
+//     }
+//     cout << endl;
+// }`,
+//         explanation: 'Tablice dwuwymiarowe w C++ to struktury danych, które przechowują elementy w układzie wierszy i kolumn. Można je traktować jako macierze, co czyni je idealnymi do reprezentacji danych w formie tabelarycznej, takich jak obrazy, tabele czy siatki. Elementy tablicy dwuwymiarowej są również indeksowane, ale wymagają dwóch indeksów: jednego dla wiersza i drugiego dla kolumny. Dzięki temu można łatwo uzyskać dostęp do konkretnego elementu oraz przetwarzać dane w złożony sposób, na przykład w pętlach zagnieżdżonych. Tablice dwuwymiarowe są często wykorzystywane w algorytmach, które wymagają przetwarzania danych w formie macierzy.'
+//       },
+//       string_ops: {
+//         title: 'Tekstowy Typ Danych i Operacje na Zmiennych Tekstowych',
+//         content: `#include <string>
+//
+// string tekst = "Hello";
+// string tekst2 = " World";
+//
+// // Podstawowe operacje
+// string polaczony = tekst + tekst2;  // Łączenie
+// int dlugosc = tekst.length();       // Długość
+// char znak = tekst[0];               // Dostęp do znaku
+//
+// // Metody string
+// tekst.substr(0, 3);                 // Podciąg
+// tekst.find("ll");                   // Szukanie
+// tekst.replace(0, 1, "h");          // Zamiana`,
+//         explanation: 'Typ danych string w C++ jest używany do przechowywania tekstu i oferuje wiele metod do manipulacji danymi tekstowymi. Operacje na zmiennych tekstowych obejmują łączenie (+), obliczanie długości (length()), dostęp do poszczególnych znaków oraz różne metody do przetwarzania tekstu, takie jak substr() (podciąg), find() (szukanie) i replace() (zamiana). Dzięki tym funkcjom programiści mogą łatwo manipulować danymi tekstowymi, co jest niezbędne w wielu aplikacjach, takich jak przetwarzanie danych wejściowych od użytkownika, analiza tekstu czy generowanie dynamicznych komunikatów.'
+//       },
+//       funkcje: {
+//         title: 'Funkcje',
+//         content: `// Deklaracja funkcji
+// int dodaj(int a, int b) {
+//     return a + b;
+// }
+//
+// // Funkcja void (bez zwracanej wartości)
+// void wyswietl(string tekst) {
+//     cout << tekst << endl;
+// }
+//
+// // Funkcja z parametrami domyślnymi
+// void powitaj(string imie = "Gość") {
+//     cout << "Witaj " << imie << endl;
+// }
+//
+// // Przeciążanie funkcji
+// double dodaj(double a, double b) {
+//     return a + b;
+// }`,
+//         explanation: 'Funkcje w C++ to bloki kodu, które można wielokrotnie wykorzystywać, co pozwala na organizację kodu i zwiększenie jego czytelności. Funkcje mogą przyjmować parametry, co umożliwia przekazywanie danych do nich, oraz zwracać wartości, co pozwala na uzyskiwanie wyników obliczeń. C++ wspiera również funkcje void, które nie zwracają wartości, oraz przeciążanie funkcji, co pozwala na definiowanie wielu funkcji o tej samej nazwie, ale z różnymi typami lub liczbami parametrów. Dzięki funkcjom programiści mogą tworzyć modularny kod, co ułatwia jego utrzymanie i rozwój.'
+//       }
+//     },
     algorytmika: {
       warunki: {
         title: 'Algorytmy z Warunkami',
@@ -280,201 +280,201 @@ if (wiek >= 18 && prawoJazdy) {
 }`,
         explanation: 'Złożone warunki pozwalają na tworzenie bardziej zaawansowanych algorytmów decyzyjnych. W tym przypadku, program nie tylko sprawdza, czy użytkownik ma prawo jazdy i czy jest pełnoletni, ale także uwzględnia jego doświadczenie w prowadzeniu pojazdów. Dzięki zagnieżdżonym warunkom, możliwe jest tworzenie bardziej szczegółowych reguł, co pozwala na lepsze dostosowanie logiki do wymagań aplikacji.'
       },
-      iteracyjne: {
-        title: 'Algorytmy Iteracyjne Proste i Zagnieżdżone',
-        content: `// Sumowanie elementów tablicy
-int suma = 0;
-for (int i = 0; i < n; i++) {
-    suma += tablica[i];
-}
-
-// Zagnieżdżone iteracje - macierz
-for (int i = 0; i < n; i++) {
-    for (int j = 0; j < m; j++) {
-        macierz[i][j] = i * j;
-    }
-}`,
-        explanation: 'Algorytmy iteracyjne wykorzystują pętle do przetwarzania danych w sposób powtarzalny. W przykładzie przedstawiono zarówno prostą iterację do sumowania elementów tablicy, jak i zagnieżdżoną iterację do wypełniania macierzy. Pętle są niezwykle przydatne w programowaniu, ponieważ pozwalają na automatyzację powtarzalnych zadań, co zwiększa efektywność i zmniejsza ryzyko błędów.'
-      },
-      tekstowe: {
-        title: 'Algorytmy na Tekstach',
-        content: `// Odwracanie tekstu
-string odwroc(string tekst) {
-    string wynik = "";
-    for (int i = tekst.length() - 1; i >= 0; i--) {
-        wynik += tekst[i];
-    }
-    return wynik;
-}
-
-// Sprawdzanie palindromu
-bool czyPalindrom(string tekst) {
-    int lewy = 0;
-    int prawy = tekst.length() - 1;
-    while (lewy < prawy) {
-        if (tekst[lewy] != tekst[prawy]) return false;
-        lewy++;
-        prawy--;
-    }
-    return true;
-}`,
-        explanation: 'Algorytmy tekstowe służą do przetwarzania i analizy ciągów znaków. W przedstawionych przykładach pokazano, jak można odwrócić tekst oraz sprawdzić, czy dany ciąg jest palindromem. Te operacje są fundamentalne w wielu aplikacjach, takich jak edytory tekstu, systemy wyszukiwania czy aplikacje do analizy danych, gdzie manipulacja tekstem jest kluczowa.'
-      },
-      trojkat: {
-        title: 'Algorytm Sprawdzania Warunku Istnienia Trójkąta',
-        content: `bool czyTrojkat(int a, int b, int c) {
-    return (a + b > c && b + c > a && a + c > b);
-}`,
-        explanation: 'Trójkąt istnieje, gdy suma długości dowolnych dwóch boków jest większa od długości trzeciego boku. Algorytm ten jest prostym, ale istotnym narzędziem w geometrii, które pozwala na weryfikację, czy dane długości mogą tworzyć trójkąt. Jest to przykład zastosowania warunków w praktyce, gdzie logika matematyczna jest implementowana w kodzie.'
-      }
-    },
+//       iteracyjne: {
+//         title: 'Algorytmy Iteracyjne Proste i Zagnieżdżone',
+//         content: `// Sumowanie elementów tablicy
+// int suma = 0;
+// for (int i = 0; i < n; i++) {
+//     suma += tablica[i];
+// }
+//
+// // Zagnieżdżone iteracje - macierz
+// for (int i = 0; i < n; i++) {
+//     for (int j = 0; j < m; j++) {
+//         macierz[i][j] = i * j;
+//     }
+// }`,
+//         explanation: 'Algorytmy iteracyjne wykorzystują pętle do przetwarzania danych w sposób powtarzalny. W przykładzie przedstawiono zarówno prostą iterację do sumowania elementów tablicy, jak i zagnieżdżoną iterację do wypełniania macierzy. Pętle są niezwykle przydatne w programowaniu, ponieważ pozwalają na automatyzację powtarzalnych zadań, co zwiększa efektywność i zmniejsza ryzyko błędów.'
+//       },
+//       tekstowe: {
+//         title: 'Algorytmy na Tekstach',
+//         content: `// Odwracanie tekstu
+// string odwroc(string tekst) {
+//     string wynik = "";
+//     for (int i = tekst.length() - 1; i >= 0; i--) {
+//         wynik += tekst[i];
+//     }
+//     return wynik;
+// }
+//
+// // Sprawdzanie palindromu
+// bool czyPalindrom(string tekst) {
+//     int lewy = 0;
+//     int prawy = tekst.length() - 1;
+//     while (lewy < prawy) {
+//         if (tekst[lewy] != tekst[prawy]) return false;
+//         lewy++;
+//         prawy--;
+//     }
+//     return true;
+// }`,
+//         explanation: 'Algorytmy tekstowe służą do przetwarzania i analizy ciągów znaków. W przedstawionych przykładach pokazano, jak można odwrócić tekst oraz sprawdzić, czy dany ciąg jest palindromem. Te operacje są fundamentalne w wielu aplikacjach, takich jak edytory tekstu, systemy wyszukiwania czy aplikacje do analizy danych, gdzie manipulacja tekstem jest kluczowa.'
+//       },
+//       trojkat: {
+//         title: 'Algorytm Sprawdzania Warunku Istnienia Trójkąta',
+//         content: `bool czyTrojkat(int a, int b, int c) {
+//     return (a + b > c && b + c > a && a + c > b);
+// }`,
+//         explanation: 'Trójkąt istnieje, gdy suma długości dowolnych dwóch boków jest większa od długości trzeciego boku. Algorytm ten jest prostym, ale istotnym narzędziem w geometrii, które pozwala na weryfikację, czy dane długości mogą tworzyć trójkąt. Jest to przykład zastosowania warunków w praktyce, gdzie logika matematyczna jest implementowana w kodzie.'
+//       }
+//     },
     algorytmy_szczegolne: {
-      minmax: {
-        title: 'Znajdowanie Największego i Najmniejszego Elementu w Zbiorze',
-        content: `void znajdzMinMax(int tab[], int n, int &min, int &max) {
-    min = max = tab[0];
-    for (int i = 1; i < n; i++) {
-        if (tab[i] < min) min = tab[i];
-        if (tab[i] > max) max = tab[i];
-    }
-}`,
-        explanation: 'Algorytm przegląda wszystkie elementy zbioru, aktualizując wartości minimalne i maksymalne. Jest to podstawowa operacja w analizie danych, która pozwala na szybkie określenie zakresu wartości w zbiorze. Tego typu algorytmy są często wykorzystywane w różnych dziedzinach, od statystyki po przetwarzanie sygnałów.'
-      },
-      silnia: {
-        title: 'Algorytm Obliczania Silni',
-        content: `// Iteracyjnie
-int silnia(int n) {
-    int wynik = 1;
-    for (int i = 2; i <= n; i++) {
-        wynik *= i;
-    }
-    return wynik;
-}
-
-// Rekurencyjnie
-int silniaRek(int n) {
-    if (n <= 1) return 1;
-    return n * silniaRek(n - 1);
-}`,
-        explanation: 'Silnia to iloczyn wszystkich liczb naturalnych od 1 do n. Można ją obliczać iteracyjnie lub rekurencyjnie. Obliczanie silni jest klasycznym przykładem problemu, który ilustruje różne podejścia do rozwiązywania zadań w programowaniu, a także wprowadza pojęcia rekurencji i iteracji.'
-      },
-      potega: {
-        title: 'Algorytm Obliczania Potęgi',
-        content: `// Szybkie potęgowanie
-int potega(int podstawa, int wykladnik) {
-    int wynik = 1;
-    while (wykladnik > 0) {
-        if (wykladnik % 2 == 1)
-            wynik *= podstawa;
-        podstawa *= podstawa;
-        wykladnik /= 2;
-    }
-    return wynik;
-}`,
-        explanation: 'Algorytm szybkiego potęgowania pozwala efektywnie obliczać potęgi liczb. Dzięki zastosowaniu techniki dziel i zwyciężaj, algorytm ten znacząco redukuje liczbę operacji mnożenia, co czyni go bardziej wydajnym w porównaniu do prostego podejścia. Jest to przykład zastosowania algorytmów optymalizacyjnych w praktyce.'
-      },
-      euklides: {
-        title: 'Algorytm Euklidesa',
-        content: `// Iteracyjnie
-int nwd(int a, int b) {
-    while (b != 0) {
-        int temp = b;
-        b = a % b;
-        a = temp;
-    }
-    return a;
-}
-
-// Rekurencyjnie
-int nwdRek(int a, int b) {
-    if (b == 0) return a;
-    return nwdRek(b, a % b);
-}`,
-        explanation: 'Algorytm Euklidesa służy do znajdowania największego wspólnego dzielnika dwóch liczb. Jest to jeden z najstarszych znanych algorytmów, który jest niezwykle efektywny i prosty w implementacji. Dzięki swojej rekurencyjnej i iteracyjnej wersji, algorytm Euklidesa jest szeroko stosowany w matematyce i informatyce, zwłaszcza w kontekście teorii liczb oraz w zadaniach związanych z redukcją ułamków.'
-      },
-      sortowanie: {
-        title: 'Sortowanie Bąbelkowe',
-        content: `void sortowanieBabelkowe(int tab[], int n) {
-    for(int i = 0; i < n-1; i++) {
-        for(int j = 0; j < n-i-1; j++) {
-            if(tab[j] > tab[j+1]) {
-                swap(tab[j], tab[j+1]);
-            }
-        }
-    }
-}`,
-        explanation: 'Sortowanie bąbelkowe to prosty algorytm sortowania, który wielokrotnie przechodzi przez listę, porównując sąsiednie elementy i zamieniając je miejscami, jeśli są w złej kolejności. Chociaż jest to jeden z najprostszych algorytmów sortowania, jego wydajność jest niska w porównaniu do bardziej zaawansowanych metod, takich jak sortowanie szybkie czy sortowanie przez scalanie. Mimo to, sortowanie bąbelkowe jest często używane w edukacji, aby wprowadzić podstawowe pojęcia związane z algorytmami i strukturami danych.'
-      },
-      sortowanie_wybor: {
-        title: 'Sortowanie przez Wybór',
-        content: `void sortowaniePrzezWybor(int tab[], int n) {
-    for (int i = 0; i < n-1; i++) {
-        int min_idx = i;
-        for (int j = i+1; j < n; j++) {
-            if (tab[j] < tab[min_idx])
-                min_idx = j;
-        }
-        swap(tab[min_idx], tab[i]);
-    }
-}`,
-        explanation: 'Sortowanie przez wybór znajduje najmniejszy element i umieszcza go na początku, następnie powtarza proces dla pozostałej części tablicy. Algorytm ten jest prosty do zrozumienia i implementacji, ale podobnie jak sortowanie bąbelkowe, ma niską efektywność w przypadku dużych zbiorów danych. Mimo to, jest to dobry przykład algorytmu, który ilustruje podstawowe zasady sortowania i manipulacji danymi.'
-      },
-      sortowanie_wstawianie: {
-        title: 'Sortowanie przez Wstawianie',
-        content: `void sortowaniePrzezWstawianie(int tab[], int n) {
-    for (int i = 1; i < n; i++) {
-        int klucz = tab[i];
-        int j = i - 1;
-        while (j >= 0 && tab[j] > klucz) {
-            tab[j + 1] = tab[j];
-            j = j - 1;
-        }
-        tab[j + 1] = klucz;
-    }
-}`,
-        explanation: 'Sortowanie przez wstawianie buduje posortowaną tablicę element po elemencie, wstawiając każdy kolejny element w odpowiednie miejsce. Jest to bardziej efektywny algorytm w porównaniu do sortowania bąbelkowego i przez wybór, zwłaszcza dla małych zbiorów danych lub danych, które są już częściowo posortowane. Algorytm ten jest często stosowany w praktycznych zastosowaniach, takich jak sortowanie danych w bazach danych czy w aplikacjach, gdzie wydajność jest kluczowa.'
-      },
-      cezar: {
-        title: 'Szyfr Cezara',
-        content: `string szyfrCezara(string tekst, int przesuniecie) {
-    string wynik = "";
-    for (char c : tekst) {
-        if (isalpha(c)) {
-            char podstawa = isupper(c) ? 'A' : 'a';
-            wynik += (c - podstawa + przesuniecie) % 26 + podstawa;
-        } else {
-            wynik += c;
-        }
-    }
-    return wynik;
-}`,
-        explanation: 'Szyfr Cezara to prosty szyfr podstawieniowy, który przesuwa każdą literę o stałą liczbę pozycji w alfabecie. Jest to jeden z najstarszych znanych algorytmów szyfrowania, który ilustruje podstawowe zasady kryptografii. Mimo swojej prostoty, szyfr Cezara jest łatwy do złamania, co czyni go bardziej interesującym z perspektywy edukacyjnej niż praktycznej. Uczy on podstawowych koncepcji związanych z bezpieczeństwem danych i szyfrowaniem.'
-      },
-      systemy: {
-        title: 'Zamiana Systemów Liczbowych',
-        content: `// Decimal to Binary
-string decToBin(int liczba) {
-    string wynik = "";
-    while (liczba > 0) {
-        wynik = to_string(liczba % 2) + wynik;
-        liczba /= 2;
-    }
-    return wynik;
-}
-
-// Binary to Decimal
-int binToDec(string binary) {
-    int wynik = 0;
-    int potega = 1;
-    for (int i = binary.length() - 1; i >= 0; i--) {
-        if (binary[i] == '1')
-            wynik += potega;
-        potega *= 2;
-    }
-    return wynik;
-}`,
-        explanation: 'Algorytmy konwersji między systemami liczbowymi pozwalają na zamianę liczb między różnymi systemami (np. dziesiętny, dwójkowy, szesnastkowy). W przedstawionych przykładach pokazano, jak można konwertować liczby z systemu dziesiętnego na binarny oraz odwrotnie. Te operacje są kluczowe w informatyce, ponieważ różne systemy liczbowe są używane w różnych kontekstach, takich jak programowanie, elektronika czy analiza danych. Zrozumienie tych konwersji jest fundamentalne dla każdego programisty.'
-      }
+//       minmax: {
+//         title: 'Znajdowanie Największego i Najmniejszego Elementu w Zbiorze',
+//         content: `void znajdzMinMax(int tab[], int n, int &min, int &max) {
+//     min = max = tab[0];
+//     for (int i = 1; i < n; i++) {
+//         if (tab[i] < min) min = tab[i];
+//         if (tab[i] > max) max = tab[i];
+//     }
+// }`,
+//         explanation: 'Algorytm przegląda wszystkie elementy zbioru, aktualizując wartości minimalne i maksymalne. Jest to podstawowa operacja w analizie danych, która pozwala na szybkie określenie zakresu wartości w zbiorze. Tego typu algorytmy są często wykorzystywane w różnych dziedzinach, od statystyki po przetwarzanie sygnałów.'
+//       },
+//       silnia: {
+//         title: 'Algorytm Obliczania Silni',
+//         content: `// Iteracyjnie
+// int silnia(int n) {
+//     int wynik = 1;
+//     for (int i = 2; i <= n; i++) {
+//         wynik *= i;
+//     }
+//     return wynik;
+// }
+//
+// // Rekurencyjnie
+// int silniaRek(int n) {
+//     if (n <= 1) return 1;
+//     return n * silniaRek(n - 1);
+// }`,
+//         explanation: 'Silnia to iloczyn wszystkich liczb naturalnych od 1 do n. Można ją obliczać iteracyjnie lub rekurencyjnie. Obliczanie silni jest klasycznym przykładem problemu, który ilustruje różne podejścia do rozwiązywania zadań w programowaniu, a także wprowadza pojęcia rekurencji i iteracji.'
+//       }
+//       potega: {
+//         title: 'Algorytm Obliczania Potęgi',
+//         content: `// Szybkie potęgowanie
+// int potega(int podstawa, int wykladnik) {
+//     int wynik = 1;
+//     while (wykladnik > 0) {
+//         if (wykladnik % 2 == 1)
+//             wynik *= podstawa;
+//         podstawa *= podstawa;
+//         wykladnik /= 2;
+//     }
+//     return wynik;
+// }`,
+//         explanation: 'Algorytm szybkiego potęgowania pozwala efektywnie obliczać potęgi liczb. Dzięki zastosowaniu techniki dziel i zwyciężaj, algorytm ten znacząco redukuje liczbę operacji mnożenia, co czyni go bardziej wydajnym w porównaniu do prostego podejścia. Jest to przykład zastosowania algorytmów optymalizacyjnych w praktyce.'
+//       },
+//       euklides: {
+//         title: 'Algorytm Euklidesa',
+//         content: `// Iteracyjnie
+// int nwd(int a, int b) {
+//     while (b != 0) {
+//         int temp = b;
+//         b = a % b;
+//         a = temp;
+//     }
+//     return a;
+// }
+//
+// // Rekurencyjnie
+// int nwdRek(int a, int b) {
+//     if (b == 0) return a;
+//     return nwdRek(b, a % b);
+// }`,
+//         explanation: 'Algorytm Euklidesa służy do znajdowania największego wspólnego dzielnika dwóch liczb. Jest to jeden z najstarszych znanych algorytmów, który jest niezwykle efektywny i prosty w implementacji. Dzięki swojej rekurencyjnej i iteracyjnej wersji, algorytm Euklidesa jest szeroko stosowany w matematyce i informatyce, zwłaszcza w kontekście teorii liczb oraz w zadaniach związanych z redukcją ułamków.'
+//       },
+//       sortowanie: {
+//         title: 'Sortowanie Bąbelkowe',
+//         content: `void sortowanieBabelkowe(int tab[], int n) {
+//     for(int i = 0; i < n-1; i++) {
+//         for(int j = 0; j < n-i-1; j++) {
+//             if(tab[j] > tab[j+1]) {
+//                 swap(tab[j], tab[j+1]);
+//             }
+//         }
+//     }
+// }`,
+//         explanation: 'Sortowanie bąbelkowe to prosty algorytm sortowania, który wielokrotnie przechodzi przez listę, porównując sąsiednie elementy i zamieniając je miejscami, jeśli są w złej kolejności. Chociaż jest to jeden z najprostszych algorytmów sortowania, jego wydajność jest niska w porównaniu do bardziej zaawansowanych metod, takich jak sortowanie szybkie czy sortowanie przez scalanie. Mimo to, sortowanie bąbelkowe jest często używane w edukacji, aby wprowadzić podstawowe pojęcia związane z algorytmami i strukturami danych.'
+//       },
+//       sortowanie_wybor: {
+//         title: 'Sortowanie przez Wybór',
+//         content: `void sortowaniePrzezWybor(int tab[], int n) {
+//     for (int i = 0; i < n-1; i++) {
+//         int min_idx = i;
+//         for (int j = i+1; j < n; j++) {
+//             if (tab[j] < tab[min_idx])
+//                 min_idx = j;
+//         }
+//         swap(tab[min_idx], tab[i]);
+//     }
+// }`,
+//         explanation: 'Sortowanie przez wybór znajduje najmniejszy element i umieszcza go na początku, następnie powtarza proces dla pozostałej części tablicy. Algorytm ten jest prosty do zrozumienia i implementacji, ale podobnie jak sortowanie bąbelkowe, ma niską efektywność w przypadku dużych zbiorów danych. Mimo to, jest to dobry przykład algorytmu, który ilustruje podstawowe zasady sortowania i manipulacji danymi.'
+//       },
+//       sortowanie_wstawianie: {
+//         title: 'Sortowanie przez Wstawianie',
+//         content: `void sortowaniePrzezWstawianie(int tab[], int n) {
+//     for (int i = 1; i < n; i++) {
+//         int klucz = tab[i];
+//         int j = i - 1;
+//         while (j >= 0 && tab[j] > klucz) {
+//             tab[j + 1] = tab[j];
+//             j = j - 1;
+//         }
+//         tab[j + 1] = klucz;
+//     }
+// }`,
+//         explanation: 'Sortowanie przez wstawianie buduje posortowaną tablicę element po elemencie, wstawiając każdy kolejny element w odpowiednie miejsce. Jest to bardziej efektywny algorytm w porównaniu do sortowania bąbelkowego i przez wybór, zwłaszcza dla małych zbiorów danych lub danych, które są już częściowo posortowane. Algorytm ten jest często stosowany w praktycznych zastosowaniach, takich jak sortowanie danych w bazach danych czy w aplikacjach, gdzie wydajność jest kluczowa.'
+//       },
+//       cezar: {
+//         title: 'Szyfr Cezara',
+//         content: `string szyfrCezara(string tekst, int przesuniecie) {
+//     string wynik = "";
+//     for (char c : tekst) {
+//         if (isalpha(c)) {
+//             char podstawa = isupper(c) ? 'A' : 'a';
+//             wynik += (c - podstawa + przesuniecie) % 26 + podstawa;
+//         } else {
+//             wynik += c;
+//         }
+//     }
+//     return wynik;
+// }`,
+//         explanation: 'Szyfr Cezara to prosty szyfr podstawieniowy, który przesuwa każdą literę o stałą liczbę pozycji w alfabecie. Jest to jeden z najstarszych znanych algorytmów szyfrowania, który ilustruje podstawowe zasady kryptografii. Mimo swojej prostoty, szyfr Cezara jest łatwy do złamania, co czyni go bardziej interesującym z perspektywy edukacyjnej niż praktycznej. Uczy on podstawowych koncepcji związanych z bezpieczeństwem danych i szyfrowaniem.'
+//       },
+//       systemy: {
+//         title: 'Zamiana Systemów Liczbowych',
+//         content: `// Decimal to Binary
+// string decToBin(int liczba) {
+//     string wynik = "";
+//     while (liczba > 0) {
+//         wynik = to_string(liczba % 2) + wynik;
+//         liczba /= 2;
+//     }
+//     return wynik;
+// }
+//
+// // Binary to Decimal
+// int binToDec(string binary) {
+//     int wynik = 0;
+//     int potega = 1;
+//     for (int i = binary.length() - 1; i >= 0; i--) {
+//         if (binary[i] == '1')
+//             wynik += potega;
+//         potega *= 2;
+//     }
+//     return wynik;
+// }`,
+//         explanation: 'Algorytmy konwersji między systemami liczbowymi pozwalają na zamianę liczb między różnymi systemami (np. dziesiętny, dwójkowy, szesnastkowy). W przedstawionych przykładach pokazano, jak można konwertować liczby z systemu dziesiętnego na binarny oraz odwrotnie. Te operacje są kluczowe w informatyce, ponieważ różne systemy liczbowe są używane w różnych kontekstach, takich jak programowanie, elektronika czy analiza danych. Zrozumienie tych konwersji jest fundamentalne dla każdego programisty.'
+//       }
     }
   };
 
