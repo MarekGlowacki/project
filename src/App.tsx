@@ -254,7 +254,8 @@ for (int i = 0; i < 3; i++) {
 //         explanation: 'Funkcje w C++ to bloki kodu, które można wielokrotnie wykorzystywać, co pozwala na organizację kodu i zwiększenie jego czytelności. Funkcje mogą przyjmować parametry, co umożliwia przekazywanie danych do nich, oraz zwracać wartości, co pozwala na uzyskiwanie wyników obliczeń. C++ wspiera również funkcje void, które nie zwracają wartości, oraz przeciążanie funkcji, co pozwala na definiowanie wielu funkcji o tej samej nazwie, ale z różnymi typami lub liczbami parametrów. Dzięki funkcjom programiści mogą tworzyć modularny kod, co ułatwia jego utrzymanie i rozwój.'
 //       }
 //     },
-    algorytmika: {
+  },
+      algorytmika: {
       warunki: {
         title: 'Algorytmy z Warunkami',
         content: `if (liczba > 0) {
@@ -280,6 +281,7 @@ if (wiek >= 18 && prawoJazdy) {
 }`,
         explanation: 'Złożone warunki pozwalają na tworzenie bardziej zaawansowanych algorytmów decyzyjnych. W tym przypadku, program nie tylko sprawdza, czy użytkownik ma prawo jazdy i czy jest pełnoletni, ale także uwzględnia jego doświadczenie w prowadzeniu pojazdów. Dzięki zagnieżdżonym warunkom, możliwe jest tworzenie bardziej szczegółowych reguł, co pozwala na lepsze dostosowanie logiki do wymagań aplikacji.'
       },
+    },
 //       iteracyjne: {
 //         title: 'Algorytmy Iteracyjne Proste i Zagnieżdżone',
 //         content: `// Sumowanie elementów tablicy
@@ -475,8 +477,9 @@ if (wiek >= 18 && prawoJazdy) {
 // }`,
 //         explanation: 'Algorytmy konwersji między systemami liczbowymi pozwalają na zamianę liczb między różnymi systemami (np. dziesiętny, dwójkowy, szesnastkowy). W przedstawionych przykładach pokazano, jak można konwertować liczby z systemu dziesiętnego na binarny oraz odwrotnie. Te operacje są kluczowe w informatyce, ponieważ różne systemy liczbowe są używane w różnych kontekstach, takich jak programowanie, elektronika czy analiza danych. Zrozumienie tych konwersji jest fundamentalne dla każdego programisty.'
 //       }
-    }
-  };
+  }
+
+    };
 
   // Calculate total sections and completed sections
   const totalSections = Object.values(sections).reduce(
