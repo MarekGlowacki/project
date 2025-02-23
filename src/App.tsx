@@ -508,7 +508,7 @@ if (wiek >= 18 && prawoJazdy) {
         <div className="max-w-7xl mx-auto px-4 py-6">
           <div className="flex items-center space-x-3">
             <Code2 className="w-8 h-8 text-indigo-600" />
-            <h1 className="text-3xl font-bold text-gray-900">Nauka C++</h1>
+            <h1 className="text-3xl font-bold text-gray-900">Nauka C++ do sprawdzianu zaliczającego semestr</h1>
           </div>
         </div>
       </header>
@@ -632,6 +632,12 @@ if (wiek >= 18 && prawoJazdy) {
             </div>
           </div>
         </main>
+        <footer className="bg-white shadow-sm mt-8">
+          <div className="max-w-7xl mx-auto px-4 py-6 text-center">
+            <p className="text-gray-600">&copy; 2025 marekglowacki.pl</p>
+          </div>
+        </footer>
+
     </div>
   );
 }
