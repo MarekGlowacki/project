@@ -634,7 +634,9 @@ if (wiek >= 18 && prawoJazdy) {
         </main>
         <footer className="bg-white shadow-sm mt-8">
           <div className="max-w-7xl mx-auto px-4 py-6 text-center">
-            <p className="text-gray-600">&copy; 2025 marekglowacki.pl</p>
+              <p className="text-gray-600">
+                &copy; 2025 <a href="https://www.marekglowacki.pl" className="text-indigo-600 hover:underline">marekglowacki.pl</a>
+              </p>
           </div>
         </footer>
 
